@@ -29,7 +29,7 @@
 {% do model_yaml.append('    description: ""') %}
 {% do model_yaml.append('    columns:') %}
 
-{% set relation=ref(model_name) %}
+{% set relation=api.Relation.create(identifier=model_name) %}
 {%- set columns = adapter.get_columns_in_relation(relation) -%}
 
 {% for column in columns %}
